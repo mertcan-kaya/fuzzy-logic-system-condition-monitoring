@@ -1,0 +1,69 @@
+[System]
+Name='EPUD_B'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=25
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='E'
+Range=[-0.25 1.25]
+NumMFs=5
+MF1='E5':'trimf',[-0.25 0 0.25]
+MF2='E4':'trimf',[0 0.25 0.5]
+MF3='E3':'trimf',[0.25 0.5 0.75]
+MF4='E2':'trimf',[0.5 0.75 1]
+MF5='E1':'trimf',[0.75 1 1.25]
+
+[Input2]
+Name='L'
+Range=[-0.25 1.25]
+NumMFs=5
+MF1='L1':'trimf',[-0.25 0 0.25]
+MF2='L2':'trimf',[0 0.25 0.5]
+MF3='L3':'trimf',[0.25 0.5 0.75]
+MF4='L4':'trimf',[0.5 0.75 1]
+MF5='L5':'trimf',[0.75 1 1.25]
+
+[Output1]
+Name='B'
+Range=[0 1]
+NumMFs=5
+MF1='B1':'trimf',[0 0 0]
+MF2='B2':'trimf',[0.25 0.25 0.25]
+MF3='B3':'trimf',[0.5 0.5 0.5]
+MF4='B4':'trimf',[0.75 0.75 0.75]
+MF5='B5':'trimf',[1 1 1]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 1 (1) : 1
+1 3, 1 (1) : 1
+1 4, 1 (1) : 1
+1 5, 1 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+2 4, 2 (1) : 1
+2 5, 2 (1) : 1
+3 1, 1 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
+3 4, 3 (1) : 1
+3 5, 3 (1) : 1
+4 1, 1 (1) : 1
+4 2, 2 (1) : 1
+4 3, 3 (1) : 1
+4 4, 4 (1) : 1
+4 5, 4 (1) : 1
+5 1, 1 (1) : 1
+5 2, 2 (1) : 1
+5 3, 3 (1) : 1
+5 4, 4 (1) : 1
+5 5, 5 (1) : 1

@@ -1,0 +1,57 @@
+[System]
+Name='EPUD_PU'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=13
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='PG'
+Range=[-0.25 1.25]
+NumMFs=5
+MF1='PG1':'trimf',[-0.25 0 0.25]
+MF2='PG2':'trimf',[0 0.25 0.5]
+MF3='PG3':'trimf',[0.25 0.5 0.75]
+MF4='PG4':'trimf',[0.5 0.75 1]
+MF5='PG5':'trimf',[0.75 1 1.25]
+
+[Input2]
+Name='F'
+Range=[-0.25 1.25]
+NumMFs=5
+MF1='F1':'trimf',[-0.25 0 0.25]
+MF2='F2':'trimf',[0 0.25 0.5]
+MF3='F3':'trimf',[0.25 0.5 0.75]
+MF4='F4':'trimf',[0.5 0.75 1]
+MF5='F5':'trimf',[0.75 1 1.25]
+
+[Output1]
+Name='PU'
+Range=[0 1]
+NumMFs=5
+MF1='PU1':'trimf',[0 0 0]
+MF2='PU2':'trimf',[0.25 0.25 0.25]
+MF3='PU3':'trimf',[0.5 0.5 0.5]
+MF4='PU4':'trimf',[0.75 0.75 0.75]
+MF5='PU5':'trimf',[1 1 1]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 2 (1) : 1
+2 1, 1 (1) : 1
+2 2, 2 (1) : 1
+2 3, 2 (1) : 1
+3 2, 2 (1) : 1
+3 3, 3 (1) : 1
+3 4, 3 (1) : 1
+4 3, 3 (1) : 1
+4 4, 4 (1) : 1
+4 5, 4 (1) : 1
+5 4, 4 (1) : 1
+5 5, 5 (1) : 1
